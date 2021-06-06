@@ -37,7 +37,8 @@ body {
 }
 
 .nav {
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 10;
   display: flex;
@@ -85,11 +86,14 @@ main {
   place-items: center;
   text-align: center;
   color: white;
-  h1 {
-    font-size: 2.5rem;
-  }
-  p {
-    font-size: 1rem;
+  div {
+    padding: 0 20px;
+    h1 {
+      font-size: 2.5rem;
+    }
+    p {
+      font-size: 1rem;
+    }
   }
 }
 
