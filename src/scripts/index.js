@@ -11,7 +11,7 @@ restaurants.forEach((restaurant) => {
    <div class="card">
     <div class="card__image">
         <span>${city}</span>
-        <img src='${pictureId}' alt=''>
+        <img src='${pictureId}' alt='restaurant'>
     </div>
     <div class="card__body">
       <p>Rating : ${rating} <i class="fas fa-star" style='color:orange'></i></p>
