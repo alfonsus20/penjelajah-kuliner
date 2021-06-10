@@ -45,7 +45,7 @@ body {
   padding: 0.5rem 1.5rem;
   background-color: #fff;
   &__logo {
-    flex: 0 0 3rem;
+    flex: 0 0 3.5rem;
     img {
       width: 100%;
     }
@@ -164,8 +164,9 @@ footer {
       flex-direction: row;
       align-items: center;
       img {
-        width: 2rem;
-        height: 2.2rem;
+        width: 3rem;
+        height: 3.2rem;
+        margin-left: 1rem;
       }
     }
     .open {
@@ -192,6 +193,8 @@ footer {
       outline: none;
       background-color: white;
       border: none;
+      font-size: 2rem;
+      padding: 1rem 0.5rem;
     }
   }
 
