@@ -131,6 +131,12 @@ main {
         display: flex;
         flex-direction: column;
         row-gap: 0.3rem;
+        p {
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
       }
     }
   }

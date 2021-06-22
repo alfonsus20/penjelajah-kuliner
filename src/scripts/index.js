@@ -1,12 +1,12 @@
-import "regenerator-runtime"; /* for async await transpile */
-import "../styles/style.scss";
-import data from "../DATA.json";
+import 'regenerator-runtime'; /* for async await transpile */
+import '../styles/style.scss';
+import data from '../DATA.json';
 
-let { restaurants } = data;
-let cardContainer = document.getElementById("card-container");
+const { restaurants } = data;
+const cardContainer = document.getElementById('card-container');
 
 restaurants.forEach((restaurant) => {
-  let { city, pictureId, rating, name, description } = restaurant;
+  const { city, pictureId, rating, name, description } = restaurant;
   cardContainer.innerHTML += `
    <div class="card">
     <div class="card__image">
@@ -21,13 +21,13 @@ restaurants.forEach((restaurant) => {
   </div>`;
 });
 
-const burger = document.getElementById("burger");
+const burger = document.getElementById('burger');
 
-burger.addEventListener("click", () => {
-  const navlist = document.getElementById("navlist");
-  if (navlist.classList.contains("open")) {
-    navlist.classList.remove("open");
+burger.addEventListener('click', () => {
+  const navlist = document.getElementById('navlist');
+  if (navlist.classList.contains('open')) {
+    navlist.classList.remove('open');
   } else {
-    navlist.classList.add("open");
+    navlist.classList.add('open');
   }
 });
