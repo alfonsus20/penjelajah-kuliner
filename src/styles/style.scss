@@ -19,7 +19,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .skip-link {
@@ -78,7 +78,7 @@ main {
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.5)
     ),
-    url("../public/images/heros/hero-image_2.jpg");
+    url('../public/images/heros/hero-image_2.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
