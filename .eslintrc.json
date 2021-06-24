@@ -12,6 +12,9 @@
         "sourceType": "module"
     },
     "rules": {
-        "object-curly-newline": "off"
+        "object-curly-newline": "off",
+        "linebreak-style": 0,
+        "no-underscore-dangle" : 0,
+        "operator-linebreak" : "off"
     }
 }
