@@ -28,9 +28,11 @@ const app = new App({
 //   </div>`;
 // });
 window.addEventListener('hashchange', () => {
+  window.scroll({ top: 0, left: 0, behavior: 'auto' });
   app.renderPage();
 });
 
 window.addEventListener('load', () => {
+  window.scroll({ top: 0, left: 0, behavior: 'auto' });
   app.renderPage();
 });
