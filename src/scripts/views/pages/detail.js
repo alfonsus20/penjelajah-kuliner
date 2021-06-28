@@ -7,9 +7,11 @@ const detail = {
   async render() {
     return `
         <section id='detail'>
-            <h1>Halaman detail</h1>
             <div id='restaurant'>
 
+            </div>
+            <div id='likeButtonContainer'>
+            
             </div>
         </section>
     `;
@@ -20,10 +22,16 @@ const detail = {
     const restaurant = await TheRestaurantSource.restaurantDetail(url.id);
     const detailContainer = document.querySelector('#restaurant');
     detailContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
-
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
-      restaurant: {},
+      restaurant: {
+        id: restaurant.id,
+        city: restaurant.city,
+        pictureId: restaurant.pictureId,
+        rating: restaurant.rating,
+        name: restaurant.name,
+        description: restaurant.description,
+      },
     });
   },
 };
