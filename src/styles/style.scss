@@ -1,12 +1,12 @@
 $primary-color: #fb9300;
 $dark-gray: #343f56;
 $black: #000;
+$pink: #f54748;
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  // scroll-behavior: smooth;
 }
 
 html {
@@ -18,6 +18,9 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
@@ -81,6 +84,88 @@ a:hover {
   }
 }
 
+#restaurant-detail {
+  flex-grow: 1;
+  padding: 1.5rem 2rem;
+  max-width: 1600px;
+  .information {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2rem;
+    margin: 0 auto 1.5rem 0;
+    &__image {
+      flex: 0 0 30rem;
+      display: flex;
+      img {
+        width: 100%;
+        margin: auto;
+        border-radius: 15px;
+      }
+    }
+    &__detail {
+      flex: 1 1 auto;
+      margin: auto 0;
+      display: flex;
+      flex-direction: column;
+      & > * {
+        margin-bottom: 0.3rem;
+      }
+    }
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    color: $primary-color;
+  }
+
+  .menu {
+    &__detail {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      border-radius: 15px;
+      column-gap: 2rem;
+      &__variant {
+        padding: 3rem 2rem;
+        width: 18rem;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        text-align: center;
+        cursor: pointer;
+        &:hover {
+          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+        &__title {
+          color: $pink;
+          font-size: 1.2rem;
+          margin-bottom: 0.8rem;
+        }
+      }
+    }
+    margin-bottom: 1rem;
+  }
+
+  .reviews {
+    &__title {
+      margin-bottom: 0.5rem;
+    }
+    .review {
+      margin-bottom: 0.6rem;
+      &__reviewer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        column-gap: 1.2rem;
+        &__name {
+          color: $pink;
+        }
+        &__date {
+          font-size: 0.65rem;
+          font-style: italic;
+        }
+      }
+    }
+  }
+}
 
 #landingPage {
   background-image: linear-gradient(
@@ -155,12 +240,12 @@ a:hover {
 #favorite,
 #detail {
   margin-top: 80px;
-  // min-height: 100vh;
 }
 
-#detail{
-  .menu{
-    &__foods, &__drinks{
+#detail {
+  .menu {
+    &__foods,
+    &__drinks {
       margin-left: 20px;
     }
   }

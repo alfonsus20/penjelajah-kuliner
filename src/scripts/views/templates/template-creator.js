@@ -20,48 +20,62 @@ const createRestaurantDetailTemplate = (restaurant) => {
   const { city, pictureId, rating, name, menus, address, customerReviews } =
     restaurant;
   const { foods, drinks } = menus;
-  const foodsFormatted = foods.map((food) => `<li>${food.name}</li>`).join(' ');
+  const foodsFormatted = foods.map((food) => `<dd>${food.name}</dd>`).join(' ');
   const drinksFormatted = drinks
-    .map((drink) => `<li>${drink.name}</li>`)
+    .map((drink) => `<dd>${drink.name}</dd>`)
     .join(' ');
   /* eslint-disable comma-dangle */
   const reviewsFormatted = customerReviews
     .map(
       (review) => `
-    <div>
-      <p>${review.name}</p>
-      <time>${review.date}</time>
-      <p>${review.review}</p>
+    <div class='review'>
+      <div class='review__reviewer'>
+        <p class='review__reviewer__name'>${review.name}</p>
+        <time class='review__reviewer__date'>${review.date}</time>
+      </div>
+      <p class='review__text'>${review.review}</p>
     </div>
   `
     )
     .join(' ');
 
   return `
-    <div>
-      <h3>${city}</h3>
-      <img src='${CONFIG.BASE_IMAGE_URL}${pictureId}' alt = '${name}'/>
-      <p>${name}</p>
-      <p>${address}</p>
-      <p>${rating}</p>
+    <div id='restaurant-detail'>
+      <div class='information'>
+        <div class='information__image'>
+            <img src='${CONFIG.BASE_IMAGE_URL}${pictureId}' alt = '${name}'/>
+        </div>
+        <div class='information__detail'>
+            <h3>${name}</h3>
+            <p>${city}</p>
+            <p>${address}</p>
+            <p>${rating}</p>    
+        </div>
+      </div>
       <div class='menu'>
-        <h4 class='menu__title'>Menu</h4>
-        <h5 class='menu__title'>Menu Makanan</h5>
-        <ul class='menu__foods' id='menu-foods'>
-          ${foodsFormatted}
-        </ul>
-        <h5 class='menu__title'>Menu Minuman</h5>
-        <ul class='menu__drinks' id='menu-drinks'>
-          ${drinksFormatted}
-        </ul>
+        <h3 class='menu__title'>Menu</h3>
+        <div class='menu__detail'>
+          <div class='menu__detail__variant'>
+            <h4 class='menu__detail__variant__title'>Menu Makanan</h4>
+            <dl class='menu__detail__variant__foods' id='menu-foods'>
+              ${foodsFormatted}
+            </dl>
+          </div>
+          <div class='menu__detail__variant'>
+            <h4 class='menu__detail__variant__title'>Menu Minuman</h4>
+            <dl class='menu__detail__variant__drinks' id='menu-drinks'>
+              ${drinksFormatted}
+            </dl>
+          </div>
+        </div>
       </div>
       <div class='reviews'>
-        <h4 class='reviews__title'>Review</h4>
+        <h3 class='reviews__title'>Review</h3>
         <div class='reviews' id='reviews'>
           ${reviewsFormatted}
         </div>
       </div>
-    </ul>
+    </div>
   `;
 };
 
