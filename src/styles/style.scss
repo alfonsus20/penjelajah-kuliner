@@ -123,11 +123,11 @@ a:hover {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      border-radius: 15px;
       column-gap: 2rem;
       &__variant {
-        padding: 3rem 2rem;
+        padding: 2rem;
         width: 18rem;
+        border-radius: 15px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         text-align: center;
         cursor: pointer;
@@ -150,6 +150,16 @@ a:hover {
     }
     .review {
       margin-bottom: 0.6rem;
+      display: flex;
+      flex-direction: row;
+      &__photo {
+        flex: 0 0 2.5rem;
+        margin-right: 1rem;
+        img {
+          border-radius: 50%;
+          width: 100%;
+        }
+      }
       &__reviewer {
         display: flex;
         flex-direction: row;
@@ -165,6 +175,19 @@ a:hover {
       }
     }
   }
+}
+
+#likeButton {
+  background-color: $pink;
+  border-radius: 50%;
+  padding: 1.2rem;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
 }
 
 #landingPage {
