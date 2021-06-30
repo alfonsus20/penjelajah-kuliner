@@ -17,7 +17,7 @@ const createRestaurantCardTemplate = (restaurant) => {
 };
 
 const createRestaurantDetailTemplate = (restaurant) => {
-  const { city, pictureId, rating, name, menus, address, customerReviews } =
+  const { city, pictureId, rating, name, menus, address } =
     restaurant;
   const { foods, drinks } = menus;
   const foodsFormatted = foods.map((food) => `<dd>${food.name}</dd>`).join(' ');
@@ -25,24 +25,24 @@ const createRestaurantDetailTemplate = (restaurant) => {
     .map((drink) => `<dd>${drink.name}</dd>`)
     .join(' ');
   /* eslint-disable comma-dangle */
-  const reviewsFormatted = customerReviews
-    .map(
-      (review) => `
-    <div class='review'>
-      <div class='review__photo'>
-        <img src='/images/no-user.jpg' alt='${review.name}'/>
-      </div>
-      <div class='review__inner'>
-        <div class='review__reviewer'>
-          <p class='review__reviewer__name'>${review.name}</p>
-          <time class='review__reviewer__date'>${review.date}</time>
-        </div>
-        <p class='review__text'>${review.review}</p>
-      </div>
-    </div>
-  `
-    )
-    .join(' ');
+  // const reviewsFormatted = customerReviews
+  //   .map(
+  //     (review) => `
+  //   <div class='review'>
+  //     <div class='review__photo'>
+  //       <img src='/images/no-user.jpg' alt='${review.name}'/>
+  //     </div>
+  //     <div class='review__inner'>
+  //       <div class='review__reviewer'>
+  //         <p class='review__reviewer__name'>${review.name}</p>
+  //         <time class='review__reviewer__date'>${review.date}</time>
+  //       </div>
+  //       <p class='review__text'>${review.review}</p>
+  //     </div>
+  //   </div>
+  // `
+  //   )
+  //   .join(' ');
 
   return `
     <div id='restaurant-detail'>
@@ -77,7 +77,6 @@ const createRestaurantDetailTemplate = (restaurant) => {
       <div class='reviews'>
         <h3 class='reviews__title'>Review</h3>
         <div class='reviews' id='reviews'>
-          ${reviewsFormatted}
         </div>
       </div>
     </div>
