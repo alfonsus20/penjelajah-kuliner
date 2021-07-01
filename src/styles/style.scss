@@ -260,6 +260,10 @@ a:hover {
   }
 }
 
+#mainContent{
+  flex-grow: 1;
+}
+
 #favorite,
 #detail {
   margin-top: 80px;
@@ -270,6 +274,14 @@ a:hover {
     &__foods,
     &__drinks {
       margin-left: 20px;
+    }
+  }
+  #reviewRestaurant {
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      max-width: 20rem;
+      margin-bottom: 1rem;
     }
   }
 }

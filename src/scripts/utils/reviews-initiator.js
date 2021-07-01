@@ -1,9 +1,11 @@
 import TheRestaurantSource from '../data/restaurant-source';
 
 const ReviewInitiator = {
-  init({ reviewsContainer, reviews }) {
+  init({ reviewsContainer, reviews, postReviewButton, restaurant }) {
     this._reviewsContainer = reviewsContainer;
     this._reviews = reviews;
+    this._postReviewButton = postReviewButton;
+    this._restaurant = restaurant;
     this.renderReviews(this._reviews);
   },
   renderReviews(reviews) {
@@ -27,6 +29,16 @@ const ReviewInitiator = {
       )
       .join(' ');
     this._reviewsContainer.innerHTML = reviewsFormatted;
+    this._postReviewButton.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const nama = document.querySelector('#nama').value;
+      const komentar = document.querySelector('#komentar').value;
+      await this.createReview({
+        idRestaurant: this._restaurant.id,
+        nama,
+        komentar,
+      });
+    });
   },
   async createReview(review) {
     const reviews = await TheRestaurantSource.reviewRestaurant(review);

@@ -12,9 +12,15 @@ const detail = {
 
             </div>
             <form id='reviewRestaurant'>
-              <input type='text' placeholder='Nama Anda ...'/>
-              <input type='text' placeholder='Berikan Komentar Anda ...'/>
-              <button type='submit'>Kirim</button>
+              <div class='input-container'>
+                <label for='nama'>Nama</label>
+                <input type='text' name='nama' id='nama' placeholder='Nama Anda ...'/>
+              </div>
+              <div class='input-container'>
+                <label for='nama'>Komentar</label>
+                <textarea name='komentar' id='komentar' placeholder='Berikan Komentar Anda ...'></textarea>
+              </div>
+              <button type='submit' id='submitKomentar'>Kirim</button>
             </form>
             <div id='likeButtonContainer'>
             
@@ -31,6 +37,8 @@ const detail = {
     ReviewInitiator.init({
       reviewsContainer: document.querySelector('#reviews'),
       reviews: restaurant.customerReviews,
+      postReviewButton: document.querySelector('#submitKomentar'),
+      restaurant,
     });
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
