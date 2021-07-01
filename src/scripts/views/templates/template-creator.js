@@ -17,32 +17,13 @@ const createRestaurantCardTemplate = (restaurant) => {
 };
 
 const createRestaurantDetailTemplate = (restaurant) => {
-  const { city, pictureId, rating, name, menus, address } =
+  const { city, pictureId, rating, name, menus, address, description } =
     restaurant;
   const { foods, drinks } = menus;
   const foodsFormatted = foods.map((food) => `<dd>${food.name}</dd>`).join(' ');
   const drinksFormatted = drinks
     .map((drink) => `<dd>${drink.name}</dd>`)
     .join(' ');
-  /* eslint-disable comma-dangle */
-  // const reviewsFormatted = customerReviews
-  //   .map(
-  //     (review) => `
-  //   <div class='review'>
-  //     <div class='review__photo'>
-  //       <img src='/images/no-user.jpg' alt='${review.name}'/>
-  //     </div>
-  //     <div class='review__inner'>
-  //       <div class='review__reviewer'>
-  //         <p class='review__reviewer__name'>${review.name}</p>
-  //         <time class='review__reviewer__date'>${review.date}</time>
-  //       </div>
-  //       <p class='review__text'>${review.review}</p>
-  //     </div>
-  //   </div>
-  // `
-  //   )
-  //   .join(' ');
 
   return `
     <div id='restaurant-detail'>
@@ -52,9 +33,9 @@ const createRestaurantDetailTemplate = (restaurant) => {
         </div>
         <div class='information__detail'>
             <h3>${name}</h3>
-            <p>${city}</p>
-            <p>${address}</p>
-            <p>${rating} <i class="fas fa-star" style='color:orange'></i></p>    
+            <p><i class="fas fa-map-marker-alt" style='color:red'></i>&nbsp;&nbsp;${address}, ${city}</p>
+            <p><i class="fas fa-star" style='color:orange'></i>&nbsp;&nbsp;${rating}</p>    
+            <p>${description}</p>
         </div>
       </div>
       <div class='menu'>

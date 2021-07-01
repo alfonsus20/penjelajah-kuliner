@@ -87,7 +87,6 @@ a:hover {
 #restaurant-detail {
   flex-grow: 1;
   padding: 1.5rem 2rem;
-  max-width: 1600px;
   .information {
     display: flex;
     flex-direction: row;
@@ -260,7 +259,7 @@ a:hover {
   }
 }
 
-#mainContent{
+#mainContent {
   flex-grow: 1;
 }
 
@@ -277,11 +276,35 @@ a:hover {
     }
   }
   #reviewRestaurant {
+    padding: 0rem 2rem 1.5rem 2rem;
+    h3 {
+      font-size: 1.5rem;
+      color: #fb9300;
+    }
     .input-container {
       display: flex;
       flex-direction: column;
-      max-width: 20rem;
+      max-width: 28rem;
       margin-bottom: 1rem;
+      label {
+        margin-bottom: 0.3rem;
+        color: $pink;
+      }
+      input,
+      textarea {
+        border-radius: 4px;
+        border: 2px solid gray;
+        padding: 0.5rem;
+        font-family: 'Poppins';
+      }
+    }
+    #submitKomentar {
+      background-color: $pink;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      color: #fff;
+      padding: 0.5rem 1.5rem;
     }
   }
 }

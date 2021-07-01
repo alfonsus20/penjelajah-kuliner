@@ -41,6 +41,8 @@ const ReviewInitiator = {
     });
   },
   async createReview(review) {
+    document.querySelector('#nama').value = '';
+    document.querySelector('#komentar').value = '';
     const reviews = await TheRestaurantSource.reviewRestaurant(review);
     this.renderReviews(reviews);
   },

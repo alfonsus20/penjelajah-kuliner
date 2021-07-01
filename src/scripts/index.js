@@ -2,6 +2,7 @@ import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/style.scss';
 import App from './views/app';
 import swRegister from './utils/sw-register';
+import scrollToTop from './utils/util';
 
 const app = new App({
   button: document.querySelector('#burger'),
@@ -10,12 +11,12 @@ const app = new App({
 });
 
 window.addEventListener('hashchange', () => {
-  window.scroll({ top: 0, left: 0, behavior: 'auto' });
+  scrollToTop();
   app.renderPage();
 });
 
 window.addEventListener('load', () => {
-  window.scroll({ top: 0, left: 0, behavior: 'auto' });
+  scrollToTop();
   app.renderPage();
   swRegister();
 });

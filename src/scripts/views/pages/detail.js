@@ -12,6 +12,7 @@ const detail = {
 
             </div>
             <form id='reviewRestaurant'>
+              <h3>Berikan Review Anda</h3>
               <div class='input-container'>
                 <label for='nama'>Nama</label>
                 <input type='text' name='nama' id='nama' placeholder='Nama Anda ...'/>
