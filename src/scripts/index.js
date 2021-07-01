@@ -7,6 +7,7 @@ import scrollToTop from './utils/util';
 const app = new App({
   button: document.querySelector('#burger'),
   drawer: document.querySelector('#navlist'),
+  navItems: document.querySelectorAll('.nav__list__item'),
   content: document.querySelector('#mainContent'),
 });
 
