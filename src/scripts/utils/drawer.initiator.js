@@ -8,8 +8,6 @@ const DrawerInitiator = {
       this._closeDrawer(event, drawer);
     });
 
-    console.log(navItems);
-
     navItems.forEach((navItem) => {
       navItem.addEventListener('click', (event) => {
         this._closeDrawer(event, drawer);
