@@ -3,7 +3,7 @@
         "browser": true,
         "es2021": true,
         "node": true,
-        "jasmine": true
+        "jasmine": true,
     },
     "extends": [
         "airbnb-base"

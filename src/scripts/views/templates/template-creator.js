@@ -10,7 +10,7 @@ const createRestaurantCardTemplate = (restaurant) => {
       </div>
       <div class="card__body">
         <p>Rating : ${rating} <i class="fas fa-star" style='color:orange'></i></p>
-        <h3><a href='/#/detail/${restaurant.id}'>${name}</a></h3>
+        <h3 class="restaurant__name"><a href='/#/detail/${restaurant.id}'>${name}</a></h3>
         <p>${description}</p>
       </div>
     </div>`;
