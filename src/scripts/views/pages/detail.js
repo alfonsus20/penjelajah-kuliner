@@ -3,6 +3,7 @@ import TheRestaurantSource from '../../data/restaurant-source';
 import { createRestaurantDetailTemplate } from '../templates/template-creator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
 import ReviewInitiator from '../../utils/reviews-initiator';
+import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
 
 const detail = {
   async render() {
@@ -43,6 +44,7 @@ const detail = {
     });
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      favoriteRestaurants: FavoriteRestaurantIdb,
       restaurant: {
         id: restaurant.id,
         city: restaurant.city,
