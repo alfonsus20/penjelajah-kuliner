@@ -52,6 +52,7 @@
     "whatwg-fetch": "^3.2.0"
   },
   "dependencies": {
+    "concurrently": "^6.2.0",
     "idb": "^6.1.2",
     "lazysizes": "^5.3.2",
     "regenerator-runtime": "^0.13.5",
