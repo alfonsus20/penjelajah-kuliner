@@ -6,7 +6,7 @@ const createRestaurantCardTemplate = (restaurant) => {
      <div class="card">
       <div class="card__image">
           <span>${city}</span>
-          <img src='${CONFIG.BASE_IMAGE_URL}${pictureId}' alt='restaurant'>
+          <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL}${pictureId}" alt="${name}"/>
       </div>
       <div class="card__body">
         <p>Rating : ${rating} <i class="fas fa-star" style='color:orange'></i></p>
@@ -29,7 +29,7 @@ const createRestaurantDetailTemplate = (restaurant) => {
     <div id='restaurant-detail'>
       <div class='information'>
         <div class='information__image'>
-            <img className='lazyload' data-src='${CONFIG.BASE_IMAGE_URL}${pictureId}'  alt = '${name}'/>
+            <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL}${pictureId}" alt="${name}"/>
         </div>
         <div class='information__detail'>
             <h3>${name}</h3>
