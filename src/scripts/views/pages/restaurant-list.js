@@ -5,6 +5,10 @@ const RestaurantList = {
   async render() {
     return `
       <section id='landingPage'>
+        <picture>
+            <source media = "(max-width: 480px)" srcset='./images/heros/hero-image-small.jpg'>
+            <img src='./images/heros/hero-image-large.jpg'>
+        </picture>
         <div>
           <h1>Penjelajah Kuliner</h1>
           <p>Website untuk Anda Para Penikmat Kuliner Nusantara</p>
