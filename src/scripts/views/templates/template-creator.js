@@ -29,7 +29,7 @@ const createRestaurantDetailTemplate = (restaurant) => {
     <div id='restaurant-detail'>
       <div class='information'>
         <div class='information__image'>
-            <img src='${CONFIG.BASE_IMAGE_URL}${pictureId}' alt = '${name}'/>
+            <img className='lazyload' data-src='${CONFIG.BASE_IMAGE_URL}${pictureId}'  alt = '${name}'/>
         </div>
         <div class='information__detail'>
             <h3>${name}</h3>
