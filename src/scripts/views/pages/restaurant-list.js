@@ -11,7 +11,6 @@ const RestaurantList = {
         <picture>
             <source media = "(max-width: 480px)" srcset='./images/heros/hero-image-small.jpg'>
             <img src='./images/heros/hero-image-large.jpg'>
-            <img src='./images/heros/hero-image.jpg'>
         </picture>
         <div>
           <h1>Penjelajah Kuliner</h1>
