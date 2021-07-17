@@ -234,10 +234,59 @@ a:hover {
   h2 {
     margin-bottom: 1.5rem;
   }
+
   .card-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
+
+    .card-skeleton {
+      border-radius: 20px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+      &__image {
+        width: full;
+        height: 15rem;
+        background: lightgray;
+        border-radius: 20px 20px 0 0;
+        margin-bottom: 0.5rem;
+      }
+
+      &__body {
+        display: flex;
+        flex-direction: column;
+        padding: 0.8rem 0.8rem 1.5rem 0.8rem;
+        row-gap: 0.3rem;
+
+        h3 {
+          margin: 0.5rem 0;
+          padding: 1rem 0;
+        }
+
+        &__item {
+          width: full;
+          height: 1rem;
+          border-radius: 8px;
+          background: linear-gradient(
+              to right,
+              rgba(255, 255, 255, 0),
+              rgba(255, 255, 255, 0.5) 50%,
+              rgba(255, 255, 255, 0) 80%
+            ),
+            lightgray;
+          background-repeat: repeat-y;
+          background-size: 50px 500px;
+          background-position: 0 0;
+          animation: shine 1s infinite;
+        }
+      }
+
+      @keyframes shine {
+        to {
+          background-position: 100% 0, 0 0;
+        }
+      }
+    }
 
     .card {
       position: relative;
@@ -345,6 +394,14 @@ footer {
   background-color: $dark-gray;
   padding: 0.8rem 0;
   color: #fff;
+}
+
+@media (max-width: 1204px) {
+  #restaurants {
+    .card-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
 }
 
 @media (max-width: 991px) {

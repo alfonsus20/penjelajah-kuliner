@@ -16,6 +16,22 @@ const createRestaurantCardTemplate = (restaurant) => {
     </div>`;
 };
 
+const createRestaurantCardSkeletonTemplate = () => {
+  return `
+     <div class="card-skeleton">
+      <div class="card-skeleton__image">
+          
+      </div>
+      <div class="card-skeleton__body">
+        <div class='card-skeleton__body__item'></div>
+        <h3 class='card-skeleton__body__item'></h3>
+        <div class='card-skeleton__body__item'></div>
+        <div class='card-skeleton__body__item'></div>
+        <div class='card-skeleton__body__item'></div>
+      </div>
+    </div>`;
+};
+
 const createRestaurantDetailTemplate = (restaurant) => {
   const { city, pictureId, rating, name, menus, address, description } =
     restaurant;
@@ -78,6 +94,7 @@ const createUnlikeButtonTemplate = () => `
 
 export {
   createRestaurantCardTemplate,
+  createRestaurantCardSkeletonTemplate,
   createRestaurantDetailTemplate,
   createLikeButtonTemplate,
   createUnlikeButtonTemplate,

@@ -1,5 +1,8 @@
 import TheRestaurantSource from '../../data/restaurant-source';
-import { createRestaurantCardTemplate } from '../templates/template-creator';
+import {
+  createRestaurantCardSkeletonTemplate,
+  createRestaurantCardTemplate,
+} from '../templates/template-creator';
 
 const RestaurantList = {
   async render() {
@@ -8,6 +11,7 @@ const RestaurantList = {
         <picture>
             <source media = "(max-width: 480px)" srcset='./images/heros/hero-image-small.jpg'>
             <img src='./images/heros/hero-image-large.jpg'>
+            <img src='./images/heros/hero-image.jpg'>
         </picture>
         <div>
           <h1>Penjelajah Kuliner</h1>
@@ -22,8 +26,12 @@ const RestaurantList = {
   },
 
   async afterRender() {
-    const restaurants = await TheRestaurantSource.restaurantList();
     const restaurantsContainer = document.querySelector('#card-container');
+    [...Array(12).keys()].forEach(() => {
+      restaurantsContainer.innerHTML += createRestaurantCardSkeletonTemplate();
+    });
+    const restaurants = await TheRestaurantSource.restaurantList();
+    restaurantsContainer.innerHTML = '';
     restaurants.forEach((restaurant) => {
       restaurantsContainer.innerHTML +=
         createRestaurantCardTemplate(restaurant);
