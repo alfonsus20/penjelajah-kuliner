@@ -16,8 +16,7 @@ const createRestaurantCardTemplate = (restaurant) => {
     </div>`;
 };
 
-const createRestaurantCardSkeletonTemplate = () => {
-  return `
+const createRestaurantCardSkeletonTemplate = () => `
      <div class="card-skeleton">
       <div class="card-skeleton__image">
           
@@ -30,7 +29,6 @@ const createRestaurantCardSkeletonTemplate = () => {
         <div class='card-skeleton__body__item'></div>
       </div>
     </div>`;
-};
 
 const createRestaurantDetailTemplate = (restaurant) => {
   const { city, pictureId, rating, name, menus, address, description } =
@@ -45,7 +43,7 @@ const createRestaurantDetailTemplate = (restaurant) => {
     <div id='restaurant-detail'>
       <div class='information'>
         <div class='information__image'>
-            <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL}${pictureId}" alt="${name}"/>
+            <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL}${pictureId}" src="${CONFIG.BASE_IMAGE_URL}${pictureId}" alt="${name}"/>
         </div>
         <div class='information__detail'>
             <h3>${name}</h3>

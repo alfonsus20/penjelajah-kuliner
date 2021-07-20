@@ -10,7 +10,7 @@ const RestaurantList = {
       <section id='landingPage'>
         <picture>
             <source media = "(max-width: 480px)" srcset='./images/heros/hero-image-small.jpg'>
-            <img src='./images/heros/hero-image-large.jpg'>
+            <img src='./images/heros/hero-image-large.jpg' alt='hero'>
         </picture>
         <div>
           <h1>Penjelajah Kuliner</h1>
